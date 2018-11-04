@@ -1,23 +1,23 @@
-package pl.andrzejszywala.oop.dziedziczenie;
+package pl.andrzejszywala.oop.polimorfizm;
 
-public class Dziedziczenie {
-
+public class Polimorfizm {
 	public static void main(String[] args) {
-		new BMW().wlacz();
-		new Mercedes().wlacz();
+		Pojazd pojazd = new BMW();
+		pojazd.wlacz();
+		pojazd = new Mercedes();
+		pojazd.wlacz();
 	}
-
 }
 
 class Pojazd {
-
+	
 	public void wlacz() {
 		System.out.println("Włączam pojazd");
 	}
 }
 
 class Samochod extends Pojazd {
-
+	
 	public void wlacz() {
 		super.wlacz();
 		System.out.println("Włączam samochod");
@@ -25,7 +25,7 @@ class Samochod extends Pojazd {
 }
 
 class BMW extends Samochod {
-
+	
 	public void wlacz() {
 		super.wlacz();
 		System.out.println("Włączam BMW");
@@ -33,7 +33,7 @@ class BMW extends Samochod {
 }
 
 class Mercedes extends Samochod {
-
+	
 	public void wlacz() {
 		System.out.println("Włączam Mercedesa");
 	}
